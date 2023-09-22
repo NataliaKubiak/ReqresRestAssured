@@ -9,12 +9,12 @@ import org.testng.asserts.SoftAssert;
 public class CreateUserTest extends BaseTest {
 
     @Test
-    public void testCreateUser() {
+    public void createUserTest() {
         Response response = createUser();
         response.print();
 
         Assert.assertEquals(response.getStatusCode(), 201,
-                "Create User Response Status Code is not 201 but it should be");
+                "Response Status Code for Create User is not 200");
 
         SoftAssert softAssert = new SoftAssert();
 

@@ -11,13 +11,14 @@ import java.util.List;
 public class GetAllUsersTest extends BaseTest {
 
     @Test
-    public void testGetAllUsers() {
+    public void getAllUsersTest() {
         int pageNumber = 2;
         spec.queryParam("page", pageNumber);
 
         Response response = RestAssured
                 .given(spec)
                 .get("/api/users");
+
         response.print();
 
         Assert.assertEquals(response.getStatusCode(), 200,
