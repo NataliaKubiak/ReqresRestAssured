@@ -30,4 +30,23 @@ public class GetSingleResourceTest extends BaseTest {
 
         Assert.assertEquals(resource.getData().toString(), data.toString());
     }
+
+    @Test
+    public void getSingleResourceNotFoundTest() {
+        int resourseId = 22;
+        Data data = new Data(resourseId, "fuchsia rose", 2001,
+                "#C74375", "17-2031");
+
+        Response response = RestAssured
+                .given(spec)
+                .get("/api/unknown/" + resourseId);
+
+        response.print();
+
+        Resource resource = response.as(Resource.class);
+        System.out.println("Response: " + resource.getData().toString());
+
+        Assert.assertEquals(response.getStatusCode(), 404,
+                "Response Status Code for Get Single Resource Not Found is not 404");
+    }
 }

@@ -26,7 +26,7 @@ public class GetSingleUserTest extends BaseTest {
     }
 
     @Test
-    public void getSingleUserNotFound() {
+    public void getSingleUserNotFoundTest() {
         int userId = 44;
 
         Response response = RestAssured
@@ -36,6 +36,6 @@ public class GetSingleUserTest extends BaseTest {
         response.print();
 
         Assert.assertEquals(response.getStatusCode(), 404,
-                "Response Status Code for Get Not Found User is not 200");
+                "Response Status Code for Get Not Found User is not 404");
     }
 }

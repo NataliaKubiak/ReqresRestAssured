@@ -14,7 +14,7 @@ public class CreateUserTest extends BaseTest {
         response.print();
 
         Assert.assertEquals(response.getStatusCode(), 201,
-                "Response Status Code for Create User is not 200");
+                "Response Status Code for Create User is not 201");
 
         SoftAssert softAssert = new SoftAssert();
 
