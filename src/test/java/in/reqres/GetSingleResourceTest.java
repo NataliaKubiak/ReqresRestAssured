@@ -12,13 +12,13 @@ public class GetSingleResourceTest extends BaseTest {
 
     @Test
     public void getSingleResourceTest() {
-        int resourseId = 2;
-        Data data = new Data(resourseId, "fuchsia rose", 2001,
+        int resourceId = 2;
+        Data data = new Data(resourceId, "fuchsia rose", 2001,
                 "#C74375", "17-2031");
 
         Response response = RestAssured
                 .given(spec)
-                .get("/api/unknown/" + resourseId);
+                .get("/api/unknown/" + resourceId);
 
         response.print();
 
@@ -33,13 +33,13 @@ public class GetSingleResourceTest extends BaseTest {
 
     @Test
     public void getSingleResourceNotFoundTest() {
-        int resourseId = 22;
-        Data data = new Data(resourseId, "fuchsia rose", 2001,
+        int resourceId = 22;
+        Data data = new Data(resourceId, "fuchsia rose", 2001,
                 "#C74375", "17-2031");
 
         Response response = RestAssured
                 .given(spec)
-                .get("/api/unknown/" + resourseId);
+                .get("/api/unknown/" + resourceId);
 
         response.print();
 
